@@ -191,14 +191,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_REDIRECT_URL = '/api/'
 
 # Leaflet Configuration
-LEAFLET_CONFIG = {
-    'DEFAULT_CENTER': (40.7128, -74.0060),  # Default to NYC
-    'DEFAULT_ZOOM': 12,
-    'MAX_ZOOM': 20,
-    'MIN_ZOOM': 3,
-    'SCALE': 'both',
-    'ATTRIBUTION_PREFIX': 'Barber App Locations'
-}
 
 # GeoDjango settings
 if os.name == 'posix':
