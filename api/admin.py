@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.contrib.gis.admin import OSMGeoAdmin
 from .models import (
     Barber, WorkingHours, Appointment, Review, 
     BarberPortfolio, Service, BarberService

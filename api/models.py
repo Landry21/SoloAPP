@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils import timezone
-from django.contrib.gis.db import models as gis_models
-from django.contrib.gis.geos import Point
 
 # Create your models here.
 
@@ -28,7 +26,8 @@ class Barber(models.Model):
     profile_image = models.ImageField(upload_to='barber_profiles/', null=True, blank=True)
     bio = models.TextField(blank=True, default='')
     years_of_experience = models.IntegerField(default=0)
-    location = gis_models.PointField(geography=True, null=True)
+    latitude = models.FloatField(null=True, blank=True)
+    longitude = models.FloatField(null=True, blank=True)
     address = models.CharField(max_length=255, null=True, blank=True)
     price_range_min = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     price_range_max = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
@@ -51,7 +50,8 @@ class Barber(models.Model):
         # If coordinates are provided but Point isn't set
         if self._latitude is not None and self._longitude is not None:
             try:
-                self.location = Point(float(self._longitude), float(self._latitude))
+                self.longitude = float(self._longitude)
+        self.latitude = float(self._latitude)
             except (TypeError, ValueError) as e:
                 print(f"Error creating Point: {str(e)}")
                 print(f"Longitude: {self._longitude} (type: {type(self._longitude)})")

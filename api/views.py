@@ -12,9 +12,6 @@ from django.utils import timezone
 from django.contrib.auth import authenticate, get_user_model
 from django.core.exceptions import ObjectDoesNotExist
 import json
-from django.contrib.gis.geos import Point
-from django.contrib.gis.measure import D
-from django.contrib.gis.db.models.functions import Distance
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from django.shortcuts import get_object_or_404
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -285,13 +282,13 @@ class BarberViewSet(viewsets.ModelViewSet):
         radius = self.request.query_params.get('radius', 10)  # Default 10km radius
         
         if lat and lng:
-            user_location = Point(float(lng), float(lat), srid=4326)
+            # user_location = Point(float(lng), float(lat), srid=4326)
             
             # Filter barbers within radius and order by distance
             queryset = queryset.filter(
-                location__distance_lte=(user_location, D(km=float(radius)))
+                # location__distance_lte=(user_location, D(km=float(radius)))
             ).annotate(
-                distance=Distance('location', user_location)
+                # distance=Distance('location', user_location)
             ).order_by('distance')
 
         return queryset
@@ -309,12 +306,12 @@ class BarberViewSet(viewsets.ModelViewSet):
             )
 
         try:
-            user_location = Point(float(lng), float(lat), srid=4326)
+            # user_location = Point(float(lng), float(lat), srid=4326)
             
             barbers = Barber.objects.filter(
-                location__distance_lte=(user_location, D(km=float(radius)))
+                # location__distance_lte=(user_location, D(km=float(radius)))
             ).annotate(
-                distance=Distance('location', user_location)
+                # distance=Distance('location', user_location)
             ).order_by('distance')
 
             serializer = self.get_serializer(barbers, many=True)
@@ -1098,7 +1095,7 @@ def get_barber_profile(request, barber_id):
         if user_lat and user_lng:
             try:
                 user_location = Point(float(user_lng), float(user_lat), srid=4326)
-                distance = barber.location.distance(user_location) * 100  # Convert to km
+                # distance = barber.location.distance(user_location) * 100  # Convert to km
                 distance_text = f", located {distance:.1f} km away"
             except:
                 distance_text = ""
@@ -1200,11 +1197,11 @@ def search_barbers(request):
 
     # If lat/lng provided, filter and sort by distance
     if lat and lng:
-        user_location = Point(float(lng), float(lat), srid=4326)
+        # user_location = Point(float(lng), float(lat), srid=4326)
         barbers = barbers.filter(
             location__distance_lte=(user_location, D(km=radius))
         ).annotate(
-            distance=Distance('location', user_location)
+            # distance=Distance('location', user_location)
         ).order_by('distance')
 
     serializer = BarberSerializer(barbers, many=True, context={'request': request})

@@ -6,7 +6,6 @@ from .models import (
 )
 from rest_framework_gis.serializers import GeoFeatureModelSerializer
 from decimal import Decimal, InvalidOperation
-from django.contrib.gis.geos import Point
 from datetime import datetime, time, timedelta
 
 
@@ -536,7 +535,8 @@ class BarberProfileSerializer(serializers.ModelSerializer):
             # Always set the location field if latitude and longitude are provided
                 if latitude is not None and longitude is not None:
                     print(f"\nSetting coordinates: lat={latitude}, lon={longitude}")
-                instance.location = Point(float(longitude), float(latitude))
+                instance.longitude = float(longitude)
+        instance.latitude = float(latitude)
 
             # Initialize price range with decimal values
             instance.price_range_min = Decimal('0.00')
