@@ -9,5 +9,3 @@ pytz==2024.1
 dj-database-url==2.1.0
 gunicorn==21.2.0
 psycopg2-binary==2.9.9
-django-leaflet==0.29.0
-rest-framework-gis==0.18
