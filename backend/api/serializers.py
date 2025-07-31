@@ -4,7 +4,6 @@ from .models import (
     Barber, Service, WorkingHours, 
     Appointment, Review, CustomerProfile, BarberPortfolio, BarberService, ProfessionalCategory
 )
-from rest_framework_gis.serializers import GeoFeatureModelSerializer
 from decimal import Decimal, InvalidOperation
 from datetime import datetime, time, timedelta
 
@@ -122,7 +121,7 @@ class ProfessionalCategorySerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'slug', 'description', 'icon']
 
 
-class BarberSerializer(GeoFeatureModelSerializer):
+class BarberSerializer(serializers.ModelSerializer):
     user_details = serializers.SerializerMethodField()
     services = serializers.SerializerMethodField()
     reviews = serializers.SerializerMethodField()
@@ -133,7 +132,6 @@ class BarberSerializer(GeoFeatureModelSerializer):
 
     class Meta:
         model = Barber
-        geo_field = 'location'
         fields = ('id', 'user_details', 'profile_image', 'bio', 'years_of_experience',
                  'location', 'address', 'price_range_min', 'price_range_max',
                  'average_rating', 'total_reviews', 'services', 'reviews',

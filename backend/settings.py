@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
     'rest_framework',
     'corsheaders',
     'api',
@@ -106,7 +105,7 @@ if IS_PRODUCTION:
         # Fallback to individual variables
         DATABASES = {
             'default': {
-                'ENGINE': 'django.contrib.gis.db.backends.postgis',
+                'ENGINE': 'django.db.backends.postgresql',
                 'NAME': os.environ.get('DB_NAME', 'barberapp'),
                 'USER': os.environ.get('DB_USER', 'postgres'),
                 'PASSWORD': os.environ.get('DB_PASSWORD', 'postgres'),
@@ -118,7 +117,7 @@ else:
     # Development database configuration
     DATABASES = {
         'default': {
-            'ENGINE': 'django.contrib.gis.db.backends.postgis',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'barberapp',
             'USER': 'postgres',
             'PASSWORD': 'postgres',
