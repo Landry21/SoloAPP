@@ -1,0 +1,489 @@
+/* Main container for the search screen */
+.search-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: var(--container-padding);
+    padding-bottom: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Centers the header section with the title */
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    flex-shrink: 0;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 28px; /* Increased font size */
+    color: #333;
+    font-weight: 600; /* Made slightly bolder */
+}
+
+.switch-user-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.switch-user-link:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Main title styling */
+.search-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+/* Search bar container */
+.search-bar {
+    position: relative;
+    width: 784px;
+    margin: 10px auto 5px;
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    padding: 8px;
+    flex-shrink: 0;
+}
+
+/* Search input styling */
+.search-bar input {
+    flex: 1;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #666;
+}
+
+.search-bar input::placeholder {
+    color: #999;
+    font-size: 16px;
+}
+
+/* Search and location button styling */
+.search-button,
+.location-button {
+    background: none;
+    border: none;
+    padding: 0 16px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Category filter styling */
+.category-filter {
+    margin: 3px auto 5px;
+    max-width: 800px;
+    padding: 0 20px;
+    flex-shrink: 0;
+}
+
+.category-filter h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* Professional type dropdown styling */
+.professional-type-dropdown {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #666;
+    background: white;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.professional-type-dropdown:hover {
+    border-color: #007bff;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.15);
+}
+
+.professional-type-dropdown:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.professional-type-dropdown:not(:focus) {
+    border-color: #e1e5e9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.professional-type-dropdown option {
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: normal;
+    background: white;
+    color: #666;
+}
+
+/* Mobile responsive adjustments */
+@media screen and (max-width: 768px) {
+    .professional-type-dropdown {
+        font-size: 18px; /* Larger font for mobile touch */
+        padding: 16px 20px;
+        padding-right: 48px;
+        background-size: 20px;
+        background-position: right 16px center;
+    }
+    
+    .category-filter h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Subtitle styling */
+.search-subtitle {
+    color: #666;
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+/* Container for the map display */
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    flex: 1;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    min-height: 0;
+    height: calc(100vh - 120px);
+}
+
+.map-location-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.map-location-button:hover {
+    background: #f8f8f8;
+    transform: scale(1.05);
+}
+
+.map-location-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.map-location-button i {
+    font-size: 18px;
+    color: #333;
+}
+
+.map-container .leaflet-container {
+    width: 100%;
+    height: 100%;
+}
+
+.map-container .leaflet-control-zoom {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.map-container .leaflet-control-zoom a {
+    background-color: white;
+    color: #333;
+    border: none;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+.map-container .leaflet-control-zoom a:hover {
+    background-color: #f8f8f8;
+}
+
+.map-container .leaflet-control-attribution {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px 5px;
+    font-size: 11px;
+}
+
+.map-text {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Navigation bar styles */
+.navigation-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;  /* Ensure full width */
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+/* Navigation items */
+.nav-item {
+    text-align: center;
+    color: #666;
+}
+
+.nav-item p {
+    margin: 4px 0 0;
+    font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 900px) {
+    .search-screen {
+        padding: 20px;
+        overflow-x: hidden;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-bar, 
+    .map-container {
+        width: 90%;
+        min-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .map-container {
+        height: calc(100vh - 120px);
+        flex: none;
+        min-height: 0;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .search-screen {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map-container {
+        height: calc(100vh - 120px);
+        flex: none;
+    }
+
+    .navigation-bar {
+        width: 100vw;  /* Use viewport width */
+        left: 0;  /* Reset any margin offset */
+        right: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .search-screen {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map-container {
+        height: calc(100vh - 100px);
+        flex: none;
+    }
+
+    .navigation-bar {
+        width: 100vw;  /* Use viewport width */
+        left: 0;  /* Reset any margin offset */
+        right: 0;
+    }
+}
+
+/* Footer */
+.ss-app-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 5px 20px;
+    z-index: 100;
+    background-color: transparent;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Google Places Autocomplete styles */
+.pac-container {
+    border-radius: 8px;
+    margin-top: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    font-family: inherit;
+}
+
+.pac-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.pac-item:first-child {
+    border-top: none;
+}
+
+.pac-item:hover {
+    background-color: #f5f5f5;
+}
+
+.pac-item-query {
+    font-size: 14px;
+    color: #333;
+}
+
+.search-error {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px 16px;
+    margin: 16px auto;
+    border-radius: 4px;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ef9a9a;
+}
+
+.error-close-button {
+    background: none;
+    border: none;
+    color: #c62828;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 0 0 16px;
+    margin: 0;
+    line-height: 1;
+}
+
+.error-close-button:hover {
+    color: #b71c1c;
+}
+
+/* Disable map zoom when scrolling over it */
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 12px;
+}
+
+/* Style for disabled search input and button */
+.search-bar input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.search-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.switch-user-button {
+    background: none;
+    border: none;
+    color: #4a5568;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.switch-user-button:hover {
+    background-color: #edf2f7;
+}
+
+/* Responsive adjustments for map container */
+@media screen and (max-width: 768px) {
+    .map-container {
+        height: 60vh;
+        margin: 10px auto;
+        flex: none;
+    }
+    
+    .ss-app-footer {
+        bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .map-container {
+        height: 35vh;
+        margin: 5px auto;
+        flex: none;
+    }
+    
+    .ss-app-footer {
+        bottom: 190px;
+    }
+}

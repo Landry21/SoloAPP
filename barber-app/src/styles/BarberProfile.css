@@ -1,0 +1,977 @@
+.bp-container {
+    padding: 16px;
+    background: white;
+    min-height: 100vh;
+    padding-bottom: 80px; /* Space for navigation bar */
+}
+
+/* Header section */
+.bp-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.bp-header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bp-back-button {
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.bp-menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    color: #333;
+    position: relative;
+}
+
+.bp-menu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    min-width: 160px;
+    z-index: 1000;
+    display: none;
+}
+
+.bp-menu-dropdown.active {
+    display: block;
+}
+
+.bp-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bp-menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+.bp-menu-item:last-child {
+    border-top: 1px solid #eee;
+    color: #dc3545;
+}
+
+.bp-menu-item:last-child svg {
+    fill: #dc3545;
+}
+
+.bp-menu-item:last-child:hover {
+    background-color: #fff5f5;
+}
+
+.bp-menu-item svg {
+    width: 16px;
+    height: 16px;
+    color: #666;
+}
+
+/* Barber info section */
+.bp-profile-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin: 24px 0;
+}
+
+.bp-profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    position: relative;
+}
+
+.bp-profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bp-barber-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bp-text-container {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.bp-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.bp-specialization {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.bp-bio-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.bp-bio-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.bp-specialization {
+    color: #666;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* Action buttons */
+.bp-action-buttons {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.bp-call-button, .bp-book-button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.bp-call-button {
+    background: white;
+    border: 1px solid #000;
+}
+
+.bp-book-button {
+    background: black;
+    color: white;
+    border: none;
+}
+
+/* Portfolio section */
+.bp-portfolio-section {
+    margin: 10px 0;
+}
+
+.bp-section-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.bp-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    overflow: visible; /* Ensure grid does not clip menu popups */
+}
+
+.bp-portfolio-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: visible;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bp-portfolio-image-container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    position: relative;
+    background: #f5f5f5;
+}
+
+.bp-portfolio-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.bp-portfolio-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.bp-portfolio-image-container:hover .bp-portfolio-nav {
+    opacity: 1;
+}
+
+.bp-portfolio-nav:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.bp-portfolio-nav.prev {
+    left: 10px;
+}
+
+.bp-portfolio-nav.next {
+    right: 10px;
+}
+
+.bp-portfolio-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+}
+
+.bp-portfolio-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bp-portfolio-dot.active {
+    background: white;
+}
+
+.bp-portfolio-details {
+    padding: 12px;
+    background: white;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.bp-portfolio-caption {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    font-size: 13px;
+    color: #262626;
+    padding-right: 32px;
+    height: 16px;
+}
+
+.bp-portfolio-date {
+    margin: 0;
+    font-size: 11px;
+    color: #8e8e8e;
+    height: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Reviews section */
+.bp-reviews-section {
+    margin: 32px 0;
+}
+
+.bp-review-cards {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 8px 0;
+    margin-bottom: 60px;
+}
+
+/* Empty reviews state */
+.bp-no-reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 8px;
+    margin: 20px 0;
+    min-height: 200px;
+}
+
+.bp-no-reviews p {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    color: #8e8e8e;
+}
+
+.bp-add-review-button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bp-add-review-button:hover {
+    background-color: #333;
+}
+
+/* Existing review card styles */
+.bp-review-card {
+    min-width: 280px;
+    background: #f5f5f5;
+    padding: 16px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.bp-reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.bp-reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e0e0e0;
+}
+
+.bp-reviewer-name {
+    font-weight: 500;
+}
+
+.bp-rating {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.bp-review-text {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .bp-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+    .bp-portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .bp-review-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1024px) {
+    .bp-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px;
+    }
+
+    .bp-portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .bp-review-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bp-profile-picture {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .bp-portfolio-grid {
+        grid-template-columns: (2, 1fr) ;  /* Changed from repeat(2, 1fr) to 1fr */
+        gap: 12px;
+    }
+
+    /* ... rest of existing mobile styles ... */
+}
+
+.bp-navigation-bar {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: white !important;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
+    height: 60px !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    padding: 0 16px !important;
+}
+
+.bp-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+    color: #666;
+}
+
+.bp-nav-item span, .bp-nav-item p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.bp-nav-item.active span, .bp-nav-item.active p {
+    color: #007AFF;
+}
+
+.bp-nav-item svg {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+.bp-nav-item:hover {
+    color: #333;
+}
+
+.bp-nav-item:hover svg {
+    fill: #333;
+}
+
+.bp-app-footer {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 60px; /* Space between footer and nav bar */
+}
+
+.fallback-initials {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007AFF;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.bp-no-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    color: #8e8e8e;
+    background-color: #fafafa;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.bp-no-posts svg {
+    margin-bottom: 16px;
+    color: #c7c7c7;
+}
+
+.bp-no-posts p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.bp-no-posts-subtitle {
+    margin-top: 8px !important;
+    font-size: 14px !important;
+    color: #8e8e8e;
+    font-weight: normal !important;
+}
+
+.bp-portfolio-header {
+    display: flex;
+    align-items: center; /* CHANGED: Vertically center caption and menu */
+    position: relative;
+    width: 100%;
+}
+
+.bp-portfolio-menu {
+    position: absolute;
+    right: 0; /* CHANGED: Move menu button flush to the right edge */
+    top: 50%;
+    transform: translateY(-50%); /* CHANGED: Vertically center menu button */
+}
+
+.bp-portfolio-menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.bp-portfolio-menu-button:hover {
+    color: #333;
+}
+
+.bp-portfolio-menu-dropdown {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-70%);
+    right: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 5000; /* Increased to ensure menu is always above navigation dots */
+    min-width: 150px;
+    padding: 8px 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-right: 8px;
+}
+
+.bp-portfolio-item {
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    overflow: visible; /* Changed from hidden to visible to allow menu overflow */
+    position: relative;
+}
+
+.bp-portfolio-grid {
+    overflow: visible; /* Ensure grid does not clip menu popups */
+}
+
+.bp-portfolio-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: left;
+}
+
+.bp-portfolio-menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+.bp-portfolio-menu-item.delete {
+    color: #dc3545;
+}
+
+.bp-portfolio-menu-item.delete:hover {
+    background-color: #fff5f5;
+}
+
+.bp-portfolio-menu-item svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Review Form Popup */
+.bp-review-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+
+.bp-review-popup {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.bp-review-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.bp-review-popup-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.bp-review-close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+    color: #666;
+}
+
+.bp-review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.bp-rating-input {
+    display: flex;
+    gap: 8px;
+    font-size: 24px;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.bp-star-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    font-size: 28px;
+    color: #ddd;
+    transition: color 0.2s;
+}
+
+.bp-star-button.active {
+    color: #ffd700;
+}
+
+.bp-review-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: vertical;
+    font-family: inherit;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.bp-review-textarea:focus {
+    outline: none;
+    border-color: #007AFF;
+}
+
+.bp-submit-review-button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bp-submit-review-button:hover {
+    background-color: #333;
+}
+
+.bp-submit-review-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.bp-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.bp-section-header h3 {
+    margin: 0;
+}
+
+.bp-section-header .bp-add-review-button {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.barber-profile {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    min-height: 200px;
+}
+
+.error-message {
+    color: #dc3545;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.back-button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.fallback-initials {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #666;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-weight: bold;
+    color: #666;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.service-name {
+    font-weight: 500;
+}
+
+.service-price {
+    color: #28a745;
+}
+
+.working-hours {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.day {
+    font-weight: 500;
+}
+
+.hours {
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services-list,
+    .working-hours {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pull-to-refresh styles */
+.bp-refresh-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.bp-refresh-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #666;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.bp-portfolio-image-count {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.bp-portfolio-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    color: #666;
+}
+
+.bp-portfolio-placeholder svg {
+    margin-bottom: 12px;
+    opacity: 0.6;
+}
+
+.bp-portfolio-placeholder p {
+    margin: 0;
+    font-size: 14px;
+}

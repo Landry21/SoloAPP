@@ -1,0 +1,386 @@
+/* Base styles and CSS variables */
+:root {
+    --container-padding: 20px;
+    --grid-gap: 16px;
+    --border-radius: 8px;
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 24px;
+    --color-primary: #000000;
+    --color-background: #ffffff;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-border: #e0e0e0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--color-background);
+    font-size: var(--font-size-base);
+}
+
+/* Common component padding */
+.appointment-panel, 
+.booking-calendar, 
+.search-results, 
+.barber-dashboard, 
+.barber-profile, 
+.search-screen {
+    padding: var(--container-padding);
+    padding-bottom: calc(80px + 60px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Button styles */
+button {
+    border-radius: var(--border-radius);
+    padding: 12px 24px;
+    font-size: var(--font-size-base);
+    border: none;
+    cursor: pointer;
+}
+
+/* Navigation bar styles */
+.navigation-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    background: white;
+    border-top: 1px solid var(--color-border);
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-text-light);
+    cursor: pointer;
+}
+
+.nav-item.active {
+    color: #007AFF;
+}
+
+.nav-item p {
+    margin: 4px 0 0;
+    font-size: 12px;
+}
+
+/* Footer styles */
+.app-footer {
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border-top: 1px solid var(--color-border);
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--color-text-light);
+}
+
+/* Text consistency across components */
+/* Headers */
+.bd-header h1,
+.bp-header h1,
+.bc-header h1,
+.sr-header h1 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* Content cards */
+.bd-appointment-details h4,
+.bp-portfolio-item h4,
+.bc-time-details h4,
+.sr-barber-details h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.bd-appointment-details p,
+.bp-portfolio-item p,
+.bc-time-details p,
+.sr-barber-details p {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0 0;
+}
+
+/* Navigation text */
+.bd-nav-item p,
+.bp-nav-item p,
+.bc-nav-item p,
+.sr-nav-item p {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+.bd-nav-item.active p,
+.bp-nav-item.active p,
+.bc-nav-item.active p,
+.sr-nav-item.active p {
+    color: #007AFF;
+}
+
+/* Button text */
+.bd-check-day-btn,
+.bp-book-button,
+.bc-book-button,
+.sr-book-button,
+.bd-view-portfolio-btn,
+.bd-view-more-btn,
+.bp-call-button,
+.bc-back-button,
+.sr-call-button {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Description and status */
+.bd-post-date,
+.bp-post-date,
+.bc-status,
+.sr-caption,
+.bd-tag,
+.bp-tag,
+.bc-status.available,
+.sr-hashtag {
+    font-size: 12px;
+    color: #666;
+    margin: 4px 0;
+}
+
+/* Rating text */
+.bd-rating,
+.bp-rating,
+.sr-rating {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Section headers */
+.bd-section-header h3,
+.bp-portfolio-section h3,
+.bc-section-title h3,
+.sr-section-title h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Footer text */
+.bd-footer p,
+.bp-app-footer p,
+.bc-footer p,
+.sr-app-footer p {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+/* Input fields */
+.bc-search-input,
+.sr-search-input,
+input[type="text"],
+input[type="search"] {
+    font-size: 16px;
+    color: #333;
+}
+
+::placeholder {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Price text */
+.bp-portfolio-item .price,
+.sr-barber-details .price {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Responsive Breakpoints */
+/* Phone screens */
+@media screen and (max-width: 480px) {
+    :root {
+        --container-padding: 16px;
+        --grid-gap: 12px;
+        --font-size-base: 14px;
+        --font-size-large: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+
+    /* Headers */
+    .bd-header h1,
+    .bp-header h1,
+    .bc-header h1,
+    .sr-header h1 {
+        font-size: 20px;
+    }
+
+    /* Content cards */
+    .bd-appointment-details h4,
+    .bp-portfolio-item h4,
+    .bc-time-details h4,
+    .sr-barber-details h3 {
+        font-size: 14px;
+    }
+
+    .bd-appointment-details p,
+    .bp-portfolio-item p,
+    .bc-time-details p,
+    .sr-barber-details p {
+        font-size: 12px;
+    }
+
+    /* Navigation */
+    .bd-nav-item p,
+    .bp-nav-item p,
+    .bc-nav-item p,
+    .sr-nav-item p {
+        font-size: 10px;
+    }
+
+    /* Buttons */
+    .bd-check-day-btn,
+    .bp-book-button,
+    .bc-book-button,
+    .sr-book-button,
+    .bd-view-portfolio-btn,
+    .bd-view-more-btn,
+    .bp-call-button,
+    .bc-back-button,
+    .sr-call-button {
+        font-size: 12px;
+    }
+
+    /* Description and status */
+    .bd-post-date,
+    .bp-post-date,
+    .bc-status,
+    .sr-caption,
+    .bd-tag,
+    .bp-tag,
+    .bc-status.available,
+    .sr-hashtag {
+        font-size: 11px;
+    }
+
+    /* Section headers */
+    .bd-section-header h3,
+    .bp-portfolio-section h3,
+    .bc-section-title h3,
+    .sr-section-title h3 {
+        font-size: 16px;
+    }
+
+    /* Footer */
+    .bd-footer p,
+    .bp-app-footer p,
+    .bc-footer p,
+    .sr-app-footer p {
+        font-size: 12px;
+    }
+
+    /* Input fields */
+    .bc-search-input,
+    .sr-search-input,
+    input[type="text"],
+    input[type="search"] {
+        font-size: 14px;
+    }
+
+    ::placeholder {
+        font-size: 12px;
+    }
+
+    /* Price */
+    .bp-portfolio-item .price,
+    .sr-barber-details .price {
+        font-size: 12px;
+    }
+}
+
+/* Tablet screens */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    /* Headers */
+    .bd-header h1,
+    .bp-header h1,
+    .bc-header h1,
+    .sr-header h1 {
+        font-size: 22px;
+    }
+
+    /* Content cards */
+    .bd-appointment-details h4,
+    .bp-portfolio-item h4,
+    .bc-time-details h4,
+    .sr-barber-details h3 {
+        font-size: 15px;
+    }
+
+    .bd-appointment-details p,
+    .bp-portfolio-item p,
+    .bc-time-details p,
+    .sr-barber-details p {
+        font-size: 13px;
+    }
+
+    /* Navigation */
+    .bd-nav-item p,
+    .bp-nav-item p,
+    .bc-nav-item p,
+    .sr-nav-item p {
+        font-size: 11px;
+    }
+
+    /* Buttons */
+    .bd-check-day-btn,
+    .bp-book-button,
+    .bc-book-button,
+    .sr-book-button,
+    .bd-view-portfolio-btn,
+    .bd-view-more-btn,
+    .bp-call-button,
+    .bc-back-button,
+    .sr-call-button {
+        font-size: 13px;
+    }
+
+    /* Input fields */
+    .bc-search-input,
+    .sr-search-input,
+    input[type="text"],
+    input[type="search"] {
+        font-size: 15px;
+    }
+}
+
+/* Desktop screens */
+@media screen and (min-width: 769px) {
+    :root {
+        --container-padding: 40px;
+        --grid-gap: 24px;
+    }
+
+    .navigation-bar {
+        max-width: 1200px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

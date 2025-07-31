@@ -1,0 +1,128 @@
+.user-type-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.user-type-modal {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.user-type-modal h2 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+}
+
+.user-type-modal > p {
+    margin: 0 0 24px 0;
+    text-align: center;
+    color: #666;
+}
+
+.user-type-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.user-type-btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.user-type-btn:hover {
+    border-color: #007AFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.1);
+}
+
+.btn-icon {
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    border-radius: 50%;
+}
+
+.btn-content {
+    text-align: left;
+    flex: 1;
+}
+
+.btn-content h3 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.btn-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.customer-btn:hover {
+    border-color: #4CAF50;
+}
+
+.customer-btn:hover .btn-icon {
+    background: #E8F5E9;
+}
+
+.barber-btn:hover {
+    border-color: #2196F3;
+}
+
+.barber-btn:hover .btn-icon {
+    background: #E3F2FD;
+}
+
+@media screen and (max-width: 480px) {
+    .user-type-modal {
+        padding: 24px;
+        width: 95%;
+    }
+
+    .user-type-btn {
+        padding: 16px;
+    }
+
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .btn-content h3 {
+        font-size: 16px;
+    }
+
+    .btn-content p {
+        font-size: 13px;
+    }
+} 

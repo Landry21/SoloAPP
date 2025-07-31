@@ -1,0 +1,41 @@
+.rolling-text-container {
+  display: inline-block;
+  min-width: 200px;
+  text-align: left;
+}
+
+.rolling-text {
+  display: inline-block;
+  animation: fadeInOut 2s ease-in-out;
+  color: #333;
+  font-weight: 600;
+  font-size: inherit;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Ensure the container maintains consistent width */
+.rolling-text-container::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+} 

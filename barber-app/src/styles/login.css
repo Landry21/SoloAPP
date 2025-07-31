@@ -1,0 +1,216 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.login-container h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: #333;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 520px;
+  padding: 40px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.login-card h2 {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.login-form-group {
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login-form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: 12px;
+  font-size: clamp(14px, 3vw, 16px);
+  color: #333;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.login-form-group input::placeholder {
+  color: #999;
+  font-size: 16px;
+}
+
+.login-form-group input:focus {
+  outline: none;
+  background-color: #F0F0F0;
+}
+
+.sign-in-button,
+.forgot-password-button,
+.create-account-button {
+  width: 100%;
+  max-width: 400px;
+  height: 48px;
+  padding: 0;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.sign-in-button {
+  background-color: #000;
+  color: white;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.forgot-password-button {
+  background-color: #F5F5F5;
+  color: #333;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.create-account-button {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #E0E0E0;
+}
+
+.no-account-text {
+  text-align: center;
+  color: #666;
+  font-size: clamp(12px, 2.5vw, 14px);
+  margin-bottom: 12px;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  color: #dc2626;
+  padding: 12px;
+  margin: 12px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.error-message .error-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.error-message span {
+  flex: 1;
+}
+
+.footer {
+  position: relative;
+  text-align: center;
+  padding: 5px 20px;
+  margin-top: auto;
+  color: #666;
+  font-size: 14px;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.register-link a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .login-card {
+    padding: 20px;
+  }
+
+  .sign-in-button,
+  .forgot-password-button,
+  .create-account-button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .login-card {
+    padding: 15px;
+  }
+}
+
+.password-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-group input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.password-toggle:hover {
+  color: #333;
+}
+
+.password-toggle svg {
+  width: 20px;
+  height: 20px;
+} 

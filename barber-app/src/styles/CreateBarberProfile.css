@@ -1,0 +1,1053 @@
+.create-profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.create-profile-card {
+  width: 100%;
+  max-width: 520px;
+  background-color: white;
+  padding: 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.create-profile-card h2 {
+  text-align: left;
+  margin-bottom: 30px;
+  color: #000;
+  font-weight: 700;
+  font-size: clamp(24px, 5vw, 32px);
+}
+
+.barber-form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.barber-form-group label {
+  display: none;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: clamp(12px, 3vw, 16px);
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: 12px;
+  font-size: clamp(14px, 3vw, 16px);
+  color: #333;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.barber-form-group input::placeholder,
+.barber-form-group textarea::placeholder {
+  color: #999;
+  font-size: 16px;
+}
+
+.barber-form-group input:focus,
+.barber-form-group textarea:focus,
+.barber-form-group select:focus {
+  outline: none;
+  background-color: #F0F0F0;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+/* Select dropdown specific styles */
+.barber-form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.barber-form-group select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #F8F8F8;
+}
+
+.barber-form-group select option {
+  background-color: white;
+  color: #333;
+  padding: 12px;
+}
+
+.barber-form-group select option:hover {
+  background-color: #F5F5F5;
+}
+
+/* Auth Fields Container */
+.auth-fields-container {
+  width: 100%;
+  margin-bottom: 35px;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.auth-fields-container .barber-form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.auth-fields-container .barber-form-group:last-child {
+  margin-bottom: 0;
+}
+
+.auth-fields-container input {
+  width: 100%;
+  padding: 16px;
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Profile Photo Upload Styles */
+.profile-photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+  width: 150px;
+}
+
+.profile-photo-upload-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.profile-photo-upload-wrapper:hover {
+  border-color: #007bff;
+}
+
+.profile-photo-upload-wrapper input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.profile-photo-upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.profile-photo-upload-icon {
+  width: 40px;
+  height: 40px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.profile-photo-upload-text {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+.profile-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.profile-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-photo-upload-wrapper:hover .profile-photo-upload-content {
+  opacity: 1;
+}
+
+.has-preview .profile-photo-upload-content {
+  opacity: 0;
+}
+
+.has-preview:hover .profile-photo-upload-content {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Create Account Button */
+.submit-button {
+  width: 80%;
+  padding: clamp(12px, 3vw, 16px);
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: clamp(14px, 3vw, 16px);
+  font-weight: 600;
+  cursor: pointer;
+  margin: 20px auto 0;
+  display: block;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.submit-button:hover {
+  background-color: #333;
+}
+
+/* Terms Text */
+.terms-text {
+  text-align: center;
+  color: #666;
+  font-size: clamp(12px, 2.5vw, 14px);
+  margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header Image/Logo */
+.header-image {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Name Fields Container */
+.name-fields-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px;
+}
+
+.name-fields-container .barber-form-group {
+  flex: 1;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+.name-fields-container input {
+  width: 100%;
+  padding: 16px;
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Experience and Price Range Container */
+.experience-price-container {
+  display: flex;
+  gap: clamp(10px, 2vw, 10px);
+  width: 100%;
+  margin-bottom: 35px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.experience-field {
+  flex: 0.4;
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.price-range-field {
+  flex: 0.6;
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.field-label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.experience-field input[type="number"] {
+  width: 70%;
+  max-width: none;
+  font-size: clamp(14px, 2vw, 16px);
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.price-range-inputs {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.price-input-group {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  min-width: 110px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: calc(50% - 10px);
+}
+
+.price-input-group input {
+  width: 100%;
+  padding: 16px 16px 16px 30px;
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.price-input-group span.currency {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-weight: 500;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.price-separator {
+  color: #666;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* Availability Section */
+.availability-section {
+  margin-bottom: 25px;
+  width: 100%;
+  background-color: #F5F5F5;
+  border-radius: 12px;
+  padding: clamp(15px, 3vw, 20px);
+  box-sizing: border-box;
+}
+
+.day-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid #E0E0E0;
+  position: relative;
+}
+
+.day-row:last-child {
+  border-bottom: none;
+}
+
+.day-label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.day-name {
+  font-weight: 500;
+  color: #333;
+  font-size: clamp(14px, 3vw, 16px);
+}
+
+.hours-config {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.closed-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.closed-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.toggle-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.hours-input-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+.time-input {
+  position: relative;
+  min-width: 100px;
+  max-width: 120px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.time-input input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+}
+
+.time-separator {
+  color: #666;
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+/* Portfolio Upload Section */
+.portfolio-upload-container {
+  width: 100%;
+  background-color: #F5F5F5;
+  border: 2px dashed #E0E0E0;
+  border-radius: 12px;
+  padding: clamp(20px, 4vw, 30px);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.portfolio-upload-container:hover {
+  border-color: #000;
+  background-color: #F8F8F8;
+}
+
+.portfolio-input {
+  display: none;
+}
+
+.portfolio-upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.upload-icon {
+  width: 40px;
+  height: 40px;
+  color: #666;
+}
+
+.upload-text {
+  text-align: center;
+}
+
+.upload-primary-text {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.browse-text {
+  color: #000;
+  font-weight: 600;
+}
+
+.upload-secondary-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.files-selected-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.portfolio-previews {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(80px, 20vw, 100px), 1fr));
+  gap: clamp(10px, 2vw, 15px);
+  margin-top: 20px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.portfolio-preview-item {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.portfolio-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Section Headers */
+.section-header {
+  font-size: clamp(16px, 4vw, 18px);
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+/* Services Section */
+.services-section {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.service-item {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.service-inputs {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+.service-name-field {
+  flex: 0.65;
+  width: 65%;
+  position: relative;
+}
+
+.service-price-field {
+  flex: 0.25;
+  width: 25%;
+  position: relative;
+}
+
+.service-name-field input,
+.service-price-field input {
+  width: 100%;
+  padding: 16px;
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.service-price-field input {
+  padding-left: 30px;
+}
+
+.service-price-field .currency {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.remove-service-btn {
+  flex: 0.1;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.remove-service-btn:hover {
+  color: #dc3545;
+}
+
+.remove-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.add-service-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 2px dashed #ccc;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.add-service-btn:hover {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.add-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .experience-price-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+  
+  .experience-field,
+  .price-range-field {
+    width: 100%;
+    flex: 1;
+    padding: 0;
+  }
+
+  .price-range-field:last-child {
+    margin-bottom: 0;
+  }
+
+  .experience-field input[type="number"] {
+    width: 70%;
+    max-width: none;
+  }
+  
+  .price-range-inputs {
+    max-width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .price-input-group {
+    min-width: 100px;
+    max-width: calc(50% - 5px);
+  }
+
+  .day-row {
+    padding: 15px 0;
+  }
+
+  .hours-config {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .closed-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .hours-input-group {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .time-input {
+    max-width: calc(50% - 15px);
+    min-width: 90px;
+  }
+
+  .create-profile-container {
+    padding: 15px;
+  }
+
+  .create-profile-card {
+    padding: 30px 20px;
+    width: 100%;
+  }
+
+  .auth-fields-container .barber-form-group {
+    padding: 0;
+  }
+  
+  .hours-input-group {
+    padding: 0 10px;
+  }
+
+  .name-fields-container {
+    padding: 0 10px;
+  }
+
+  .service-inputs {
+    gap: 15px;
+  }
+
+  .service-name-field {
+    flex: 0.65;
+    width: 65%;
+  }
+
+  .service-price-field {
+    flex: 0.25;
+    width: 25%;
+  }
+}
+
+@media (max-width: 576px) {
+  .create-profile-container {
+    padding: 10px;
+  }
+
+  .create-profile-card {
+    padding: 20px 15px;
+  }
+
+  .name-fields-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px;
+  }
+
+  .name-fields-container .barber-form-group {
+    width: 100%;
+  }
+
+  .experience-price-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .experience-field,
+  .price-range-field {
+    width: 100%;
+    padding: 0;
+  }
+
+  .day-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .day-label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .hours-config {
+    width: 100%;
+  }
+
+  .hours-input-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .time-input {
+    min-width: 85px;
+    max-width: calc(50% - 10px);
+  }
+
+  .time-input input[type="time"] {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .time-separator {
+    font-size: 12px;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .price-range-inputs {
+    gap: 10px;
+  }
+
+  .price-input-group {
+    min-width: 90px;
+    max-width: calc(50% - 5px);
+  }
+
+  .price-input-group input {
+    padding: 14px 14px 14px 25px;
+  }
+
+  .price-input-group span.currency {
+    left: 12px;
+    font-size: 14px;
+  }
+
+  .experience-field {
+    width: 100%;
+    padding: 0;
+  }
+
+  .experience-field input[type="number"] {
+    width: 100%;
+    max-width: none;
+    padding: 16px;
+  }
+
+  .auth-fields-container .barber-form-group {
+    padding: 0;
+  }
+  
+  .hours-input-group {
+    padding: 0 8px;
+  }
+
+  .service-inputs {
+    gap: 15px;
+  }
+
+  .service-name-field {
+    flex: 0.65;
+    width: 65%;
+  }
+
+  .service-price-field {
+    flex: 0.25;
+    width: 25%;
+  }
+
+  .price-separator {
+    display: none;
+  }
+
+  .remove-service-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .service-item {
+    position: relative;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .hours-input-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .time-input {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .time-separator {
+    align-self: center;
+    padding: 4px 0;
+  }
+
+  .create-profile-container {
+    padding: 10px;
+  }
+
+  .create-profile-card {
+    padding: 15px;
+  }
+
+  .experience-field {
+    padding: 0;
+  }
+
+  .name-fields-container,
+  .experience-price-container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .create-profile-container {
+    padding: 8px;
+  }
+
+  .create-profile-card {
+    padding: 12px;
+  }
+
+  .experience-field {
+    padding: 0;
+  }
+
+  .name-fields-container,
+  .experience-price-container {
+    padding: 0;
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 20px;
+  margin-top: auto;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.password-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-group input {
+  padding-right: 40px;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #333;
+}
+
+.password-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.location-field {
+  margin: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.location-field input {
+  width: 100%;
+  padding: 16px;
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.location-field input:focus {
+  outline: none;
+  background-color: #F0F0F0;
+}
+
+.location-field .section-header {
+  margin-bottom: 12px;
+  font-size: clamp(16px, 4vw, 18px);
+  font-weight: 600;
+  color: #333;
+}
+
+.location-field input::placeholder {
+  color: #999;
+  font-size: 16px;
+}
+
+.location-field .field-hint {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}

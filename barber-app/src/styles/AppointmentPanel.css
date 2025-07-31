@@ -1,0 +1,729 @@
+/* Main container for the appointment panel */
+.appointment-panel {
+    padding: var(--container-padding);
+    padding-bottom: 80px; /* Space for navigation bar */
+    background: white;
+}
+
+/* Today's appointments section */
+.today-appointments {
+    margin-top: 24px;
+}
+
+/* Heading styles */
+.appointment-panel h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.today-appointments h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+/* Button styles */
+.today-appointments button {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Book appointment buttons */
+.today-appointments button:not(:last-child) {
+    background: white;
+    border: 1px solid #000;
+    color: #000;
+}
+
+/* Cancel appointment button */
+.today-appointments button:last-child {
+    background: #000;
+    color: white;
+    border: none;
+}
+
+/* Main container for appointments panel */
+.appointments-panel {
+    padding: 20px;
+    background: white;
+}
+
+/* Header styling for "My Appointments" */
+.appointments-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Back arrow styling */
+.back-arrow {
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+/* Section title for "Today's Appointments" */
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 24px 0 16px 0;
+}
+
+/* Individual appointment slot container */
+.appointment-slot {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Clock icon container */
+.time-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    color: #666;
+}
+
+/* Appointment time information */
+.appointment-time {
+    flex: 1;
+}
+
+/* Time display (e.g., "10:00 AM") */
+.time {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+/* Status text (e.g., "Booked by Jane Doe" or "Available") */
+.status {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Booking action buttons container */
+.booking-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* Book appointment button */
+.book-button {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Cancel appointment button */
+.cancel-button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #000;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Navigation Bar */
+.bp-navigation-bar {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: white !important;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
+    height: 60px !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    padding: 0 16px !important;
+}
+
+.bp-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+    color: #666;
+}
+
+.bp-nav-item p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.bp-nav-item.active p {
+    color: #007AFF;
+}
+
+.bp-nav-item svg {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+.bp-nav-item:hover {
+    color: #333;
+}
+
+.bp-nav-item:hover svg {
+    fill: #333;
+}
+
+/* Footer */
+.ap-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    margin-bottom: 70px;
+    color: #999;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 480px) {
+    .booking-actions {
+        gap: var(--grid-gap);
+    }
+
+    .appointment-slot {
+        padding: var(--grid-gap) 0;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .appointments-panel {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .booking-actions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.ap-main-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.ap-date-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.ap-date-label {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 12px;
+}
+
+.ap-date-label-bold {
+    font-weight: bold;
+}
+
+.ap-section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.ap-no-appointments {
+    width: 100%;
+    text-align: center;
+    color: #666;
+    margin: 32px 0;
+    font-size: 18px;
+    min-height: 80px;
+}
+
+/* NEW: 2-Column Grid Layout for Appointments */
+.ap-appointment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.ap-appointment-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 8px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.ap-appointment-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ap-appointment-details-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.ap-appointment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ap-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.ap-time {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    line-height: 1;
+}
+
+.ap-customer {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.ap-contact {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.ap-service {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+    padding: 4px 8px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    display: inline-block;
+    width: fit-content;
+}
+
+.ap-cancel-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 120px;
+}
+
+.ap-cancel-btn:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+.ap-cancel-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive Design for Grid */
+@media screen and (max-width: 768px) {
+    .ap-appointment-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .ap-appointment-card {
+        padding: 14px;
+    }
+    
+    .ap-time {
+        font-size: 18px;
+    }
+    
+    .ap-customer {
+        font-size: 15px;
+    }
+    
+    .ap-contact {
+        font-size: 13px;
+    }
+    
+    .ap-service {
+        font-size: 13px;
+        padding: 3px 6px;
+    }
+    
+    .ap-cancel-btn {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .ap-appointment-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .ap-appointment-card {
+        padding: 18px;
+    }
+    
+    .ap-time {
+        font-size: 22px;
+    }
+    
+    .ap-customer {
+        font-size: 17px;
+    }
+    
+    .ap-service {
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+    
+    .ap-cancel-btn {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+.ap-action-row { display: none; }
+
+.ap-time-service {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 2px;
+}
+
+.ap-name-contact {
+    font-size: 14px;
+    color: #555;
+}
+
+.ap-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ap-modal {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    padding: 28px 24px 20px 24px;
+    min-width: 320px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.ap-modal h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+.ap-modal p {
+    margin-bottom: 10px;
+    color: #444;
+    font-size: 15px;
+}
+
+.ap-modal-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ap-cancel-reason-input {
+    width: calc(100% - 4px);
+    min-width: 0;
+    max-width: 100%;
+    display: block;
+    margin-left: 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 0;
+    resize: vertical;
+}
+
+.ap-modal-actions {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin-top: 2px;
+}
+
+.ap-modal-cancel-btn, .ap-modal-confirm-btn {
+    width: calc(50% - 6px);
+    box-sizing: border-box;
+    height: 50px;
+    padding: 1px 4px;
+    line-height: 1;
+    font-size: 12px;
+    margin: 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.ap-modal-cancel-btn {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.ap-modal-cancel-btn:hover {
+    background-color: #e9ecef;
+    transform: translateY(-1px);
+}
+
+.ap-modal-confirm-btn {
+    background-color: #000000;
+    color: white;
+}
+
+.ap-modal-confirm-btn:hover {
+    background-color: #333333;
+    transform: translateY(-1px);
+}
+
+/* Availability Checkbox Styles */
+.ap-availability-checkbox {
+    margin: 16px 0;
+}
+
+.ap-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    padding: 8px 0;
+}
+
+.ap-checkbox-input {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    accent-color: #007bff;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.ap-checkbox-text {
+    flex: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.ap-week-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+
+.ap-week-day-section {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-sizing: border-box;
+}
+
+.ap-week-appointments-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 8px;
+}
+
+
+
+.ap-week-day-header {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 4px;
+}
+
+.ap-week-day-section .ap-appointment-card {
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    width: fit-content;
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ap-week-day-section .ap-no-appointments {
+    color: #999;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+
+.ap-week-day-header,
+.ap-appointment-card {
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .ap-week-day-header,
+  .ap-appointment-card {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ap-week-day-header,
+  .ap-appointment-card {
+    font-size: 12px;
+  }
+}
+
+.ap-week-grid-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 700px) {
+  .today-appointments .ap-appointment-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 10px 6px;
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+  .ap-appointment-details-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .ap-appointment-details {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+  }
+  .ap-cancel-btn {
+    min-width: 90px;
+    max-width: 120px;
+    font-size: 16px;
+    padding: 12px 0;
+    border-radius: 16px;
+    margin-left: 10px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ap-main-title {
+    font-size: 22px;
+  }
+  .ap-date-label {
+    font-size: 15px;
+  }
+  .ap-week-day-header {
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ap-appointment-card {
+    font-size: 10px;
+    padding: 4px 1px;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.2;
+  }
+  .ap-time-service, .ap-name-contact {
+    font-size: 10px;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.2;
+  }
+}
