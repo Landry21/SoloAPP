@@ -17,152 +17,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Barber",
             fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                (
-                    "profile_image",
-                    models.ImageField(
-                        blank=True, null=True, upload_to="barber_profiles/"
-                    ),
-                ),
-                ("bio", models.TextField(blank=True, default="")),
-                ("years_of_experience", models.IntegerField(default=0)),
-                (
-                    "location",
-                        geography=True, null=True, srid=4326
-                    ),
-                ),
-                ("address", models.CharField(blank=True, max_length=255, null=True)),
-                (
-                    "price_range_min",
-                    models.DecimalField(
-                        blank=True, decimal_places=2, max_digits=6, null=True
-                    ),
-                ),
-                (
-                    "price_range_max",
-                    models.DecimalField(
-                        blank=True, decimal_places=2, max_digits=6, null=True
-                    ),
-                ),
-                ("is_available", models.BooleanField(default=True)),
-                (
-                    "average_rating",
-                    models.DecimalField(decimal_places=2, default=0.0, max_digits=3),
-                ),
-                ("total_reviews", models.IntegerField(default=0)),
-                (
-                    "user",
-                    models.OneToOneField(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="barber_profile",
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
             ],
         ),
         migrations.CreateModel(
             name="Service",
             fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                ("name", models.CharField(max_length=100)),
-                ("description", models.TextField(blank=True, default="")),
-                ("base_price", models.DecimalField(decimal_places=2, max_digits=6)),
-                ("duration_minutes", models.PositiveIntegerField(default=45)),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("updated_at", models.DateTimeField(auto_now=True)),
-            ],
-            options={
-                "ordering": ["name"],
-            },
-        ),
-        migrations.CreateModel(
-            name="CustomerProfile",
-            fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                (
-                    "profile_image",
-                    models.ImageField(
-                        blank=True, null=True, upload_to="customer_profiles/"
-                    ),
-                ),
-                ("phone_number", models.CharField(blank=True, max_length=15)),
-                (
-                    "preferred_barbers",
-                    models.ManyToManyField(
-                        blank=True, related_name="preferred_by", to="api.barber"
-                    ),
-                ),
-                (
-                    "user",
-                    models.OneToOneField(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="customer_profile",
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
             ],
         ),
         migrations.CreateModel(
             name="BarberPortfolio",
             fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                (
-                    "image",
-                    models.ImageField(blank=True, null=True, upload_to="portfolio/"),
-                ),
-                ("description", models.CharField(blank=True, max_length=255)),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("is_group", models.BooleanField(default=False)),
-                (
-                    "barber",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="portfolio",
-                        to="api.barber",
-                    ),
-                ),
-                (
-                    "parent",
-                    models.ForeignKey(
-                        blank=True,
-                        null=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="group_images",
-                        to="api.barberportfolio",
-                    ),
-                ),
             ],
             options={
                 "ordering": ["-created_at"],
@@ -171,32 +35,6 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Appointment",
             fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                ("customer", models.CharField(max_length=255)),
-                ("date", models.DateField()),
-                ("start_time", models.TimeField()),
-                ("end_time", models.TimeField()),
-                ("service", models.CharField(max_length=255)),
-                ("notes", models.TextField(blank=True)),
-                ("contact_number", models.CharField(blank=True, max_length=15)),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("updated_at", models.DateTimeField(auto_now=True)),
-                (
-                    "barber",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="appointments",
-                        to="api.barber",
-                    ),
-                ),
             ],
             options={
                 "ordering": ["-date", "start_time"],
@@ -205,41 +43,6 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="WorkingHours",
             fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                (
-                    "day",
-                    models.CharField(
-                        choices=[
-                            ("monday", "Monday"),
-                            ("tuesday", "Tuesday"),
-                            ("wednesday", "Wednesday"),
-                            ("thursday", "Thursday"),
-                            ("friday", "Friday"),
-                            ("saturday", "Saturday"),
-                            ("sunday", "Sunday"),
-                        ],
-                        max_length=10,
-                    ),
-                ),
-                ("start_time", models.TimeField()),
-                ("end_time", models.TimeField()),
-                ("is_selected", models.BooleanField(default=True)),
-                (
-                    "barber",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="working_hours",
-                        to="api.barber",
-                    ),
-                ),
             ],
             options={
                 "ordering": ["day", "start_time"],
@@ -249,51 +52,6 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Review",
             fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                (
-                    "rating",
-                    models.IntegerField(
-                        validators=[
-                            django.core.validators.MinValueValidator(1),
-                            django.core.validators.MaxValueValidator(5),
-                        ]
-                    ),
-                ),
-                ("comment", models.TextField()),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                (
-                    "appointment",
-                    models.OneToOneField(
-                        blank=True,
-                        null=True,
-                        on_delete=django.db.models.deletion.SET_NULL,
-                        to="api.appointment",
-                    ),
-                ),
-                (
-                    "barber",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="reviews",
-                        to="api.barber",
-                    ),
-                ),
-                (
-                    "customer",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="reviews",
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
             ],
             options={
                 "ordering": ["-created_at"],
@@ -303,38 +61,6 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="BarberService",
             fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                (
-                    "price_adjustment",
-                    models.DecimalField(decimal_places=2, default=0.0, max_digits=6),
-                ),
-                ("is_active", models.BooleanField(default=True)),
-                ("custom_duration", models.PositiveIntegerField(blank=True, null=True)),
-                ("custom_description", models.TextField(blank=True)),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("updated_at", models.DateTimeField(auto_now=True)),
-                (
-                    "barber",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="services",
-                        to="api.barber",
-                    ),
-                ),
-                (
-                    "service",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="api.service"
-                    ),
-                ),
             ],
             options={
                 "ordering": ["service__name"],
