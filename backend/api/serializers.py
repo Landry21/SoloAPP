@@ -534,7 +534,7 @@ class BarberProfileSerializer(serializers.ModelSerializer):
                 if latitude is not None and longitude is not None:
                     print(f"\nSetting coordinates: lat={latitude}, lon={longitude}")
                 instance.longitude = float(longitude)
-        instance.latitude = float(latitude)
+                instance.latitude = float(latitude)
 
             # Initialize price range with decimal values
             instance.price_range_min = Decimal('0.00')
