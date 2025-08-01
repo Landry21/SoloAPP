@@ -51,9 +51,9 @@ class Barber(models.Model):
         if self._latitude is not None and self._longitude is not None:
             try:
                 self.longitude = float(self._longitude)
-        self.latitude = float(self._latitude)
+                        self.latitude = float(self._latitude)
             except (TypeError, ValueError) as e:
-                print(f"Error creating Point: {str(e)}")
+                print(f"Error setting coordinates: {str(e)}")
                 print(f"Longitude: {self._longitude} (type: {type(self._longitude)})")
                 print(f"Latitude: {self._latitude} (type: {type(self._latitude)})")
                 raise
