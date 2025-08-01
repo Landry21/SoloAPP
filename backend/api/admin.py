@@ -7,14 +7,9 @@ from .models import (
 # Register your models here.
 
 @admin.register(Barber)
-class BarberAdmin(OSMGeoAdmin):
-    list_display = ('user', 'address', 'location')
+class BarberAdmin(admin.ModelAdmin):
+    list_display = ("user", "address", "latitude", "longitude")
     search_fields = ('address',)
-    default_lon = -74.0060  # Default longitude (NYC)
-    default_lat = 40.7128   # Default latitude (NYC)
-    default_zoom = 12
-    map_width = 800
-    map_height = 600
 
 
 @admin.register(WorkingHours)
