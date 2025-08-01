@@ -14,6 +14,7 @@ router.register(r'barbers/(?P<barber_pk>\d+)/portfolio', views.BarberPortfolioVi
 router.register(r'professional-categories', views.ProfessionalCategoryViewSet, basename='professional-categories')
 
 urlpatterns = [
+    path("health/", views.health_check, name="health-check"),
     path('barbers/search/', views.search_barbers, name='search-barbers'),
     path('', include(router.urls)),
     path('auth/', include('rest_framework.urls')),
