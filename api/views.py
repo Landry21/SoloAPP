@@ -282,7 +282,6 @@ class BarberViewSet(viewsets.ModelViewSet):
         radius = self.request.query_params.get('radius', 10)  # Default 10km radius
         
         if lat and lng:
-            # user_location = Point(float(lng), float(lat), srid=4326)
             
             # Filter barbers within radius and order by distance
             queryset = queryset.filter(
@@ -306,7 +305,6 @@ class BarberViewSet(viewsets.ModelViewSet):
             )
 
         try:
-            # user_location = Point(float(lng), float(lat), srid=4326)
             
             barbers = Barber.objects.filter(
                 # location__distance_lte=(user_location, D(km=float(radius)))
@@ -1094,7 +1092,6 @@ def get_barber_profile(request, barber_id):
         
         if user_lat and user_lng:
             try:
-                user_location = Point(float(user_lng), float(user_lat), srid=4326)
                 # distance = barber.location.distance(user_location) * 100  # Convert to km
                 distance_text = f", located {distance:.1f} km away"
             except:
@@ -1120,7 +1117,6 @@ def get_barber_profile(request, barber_id):
                 "bio": automated_bio,
                 "profileImage": request.build_absolute_uri(barber.profile_image.url) if barber.profile_image else None,
                 "location": {
-                    "type": "Point",
                     "coordinates": [barber.location.x, barber.location.y] if barber.location else None
                 } if barber.location else None,
                 "business": {
@@ -1197,7 +1193,6 @@ def search_barbers(request):
 
     # If lat/lng provided, filter and sort by distance
     if lat and lng:
-        # user_location = Point(float(lng), float(lat), srid=4326)
         barbers = barbers.filter(
             location__distance_lte=(user_location, D(km=radius))
         ).annotate(
