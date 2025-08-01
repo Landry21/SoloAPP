@@ -1215,3 +1215,10 @@ class ProfessionalCategoryViewSet(viewsets.ReadOnlyModelViewSet):
         categories = ProfessionalCategory.objects.filter(is_active=True)
         serializer = self.get_serializer(categories, many=True)
         return Response(serializer.data)
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def health_check(request):
+    """Simple health check endpoint"""
+    return Response({"status": "healthy", "message": "API is running"})
+
