@@ -27,10 +27,6 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name='barber',
-            name='location',
-        ),
-        migrations.AlterField(
-            model_name='barber',
             name='price_range_max',
             field=models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True),
         ),
