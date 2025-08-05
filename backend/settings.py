@@ -1,3 +1,4 @@
+print("DEBUG: Settings file is being loaded!")
 """
 Django settings for backend project.
 
@@ -12,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+print("DEBUG: pathlib imported successfully")
+print("DEBUG: All imports completed successfully")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -96,6 +99,7 @@ if IS_PRODUCTION:
     import dj_database_url
     
     # Use DATABASE_URL from Railway or individual variables
+print("DEBUG: About to configure database")
     DATABASE_URL = os.environ.get('DATABASE_URL')
     if DATABASE_URL:
         DATABASES = {
