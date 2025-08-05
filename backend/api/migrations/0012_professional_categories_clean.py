@@ -89,7 +89,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.PROTECT,
-                to='api.professionalcategory'
+                to='backend.api.professionalcategory'
             ),
         ),
         
@@ -102,7 +102,7 @@ class Migration(migrations.Migration):
             name='category',
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.PROTECT,
-                to='api.professionalcategory'
+                to='backend.api.professionalcategory'
             ),
         ),
     ] 

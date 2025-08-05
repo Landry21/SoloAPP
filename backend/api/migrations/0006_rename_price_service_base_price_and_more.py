@@ -41,8 +41,8 @@ class Migration(migrations.Migration):
                 ('custom_description', models.TextField(blank=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('barber', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='services', to='api.barber')),
-                ('service', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api.service')),
+                ('barber', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='services', to='backend.api.barber')),
+                ('service', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend.api.service')),
             ],
             options={
                 'ordering': ['service__name'],

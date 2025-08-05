@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('description', models.CharField(blank=True, max_length=255)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('barber', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='portfolio_groups', to='api.barber')),
+                ('barber', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='portfolio_groups', to='backend.api.barber')),
             ],
             options={
                 'ordering': ['-created_at'],
@@ -26,6 +26,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='barberportfolio',
             name='group',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='images', to='api.portfoliogroup'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='images', to='backend.api.portfoliogroup'),
         ),
     ]
