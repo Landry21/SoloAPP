@@ -238,3 +238,4 @@ if IS_PRODUCTION:
     # Static files
     STATIC_ROOT = BASE_DIR / 'staticfiles'
     MEDIA_ROOT = BASE_DIR / 'mediafiles'
+# Additional debug line
