@@ -1,3 +1,4 @@
+print("DEBUG: Settings file is being loaded!")
 """
 Django settings for backend project.
 
