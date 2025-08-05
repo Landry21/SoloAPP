@@ -204,3 +204,4 @@ REST_FRAMEWORK = {
 
 print("DEBUG: Settings file loaded successfully!")
 
+# Force rebuild Tue Aug  5 00:05:12 EDT 2025
