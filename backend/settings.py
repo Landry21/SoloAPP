@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "api",
+    "backend.api",
     "rest_framework.authtoken",
 ]
 print("DEBUG: INSTALLED_APPS set successfully")
@@ -68,7 +68,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "backend.urls"
+ROOT_URLCONF = "backend.backend.urls"
 
 CORS_ALLOW_ALL_ORIGINS = not IS_PRODUCTION  # For development only
 CORS_ALLOW_CREDENTIALS = True
@@ -204,3 +204,4 @@ REST_FRAMEWORK = {
 
 print("DEBUG: Settings file loaded successfully!")
 
+# Force rebuild Tue Aug  5 00:05:12 EDT 2025
