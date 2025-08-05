@@ -19,14 +19,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.authtoken.views import obtain_auth_token
-from api.views import CustomAuthToken
+from backend.api.views import CustomAuthToken
 # Temporarily comment out the docs import to fix the error
 # from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/token/', CustomAuthToken.as_view(), name='api_token_auth'),
-    path('api/', include('api.urls')),
+    path('api/', include('backend.api.urls')),
     path('api-auth/', include('rest_framework.urls')),
     # Temporarily comment out the docs URL to fix the error
     # path('docs/', include_docs_urls(title='Barber Shop API')),
