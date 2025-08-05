@@ -237,6 +237,3 @@ if IS_PRODUCTION:
     # Static files
     STATIC_ROOT = BASE_DIR / 'staticfiles'
     MEDIA_ROOT = BASE_DIR / 'mediafiles'
-print(f"DEBUG: DATABASE_URL = {os.environ.get(\"DATABASE_URL\")}")
-print(f"DEBUG: ENVIRONMENT = {os.environ.get(\"ENVIRONMENT\")}")
-print(f"DEBUG: All env vars = {dict(os.environ)}")
