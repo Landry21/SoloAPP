@@ -15,7 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+# from django.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.authtoken.views import obtain_auth_token
@@ -25,9 +26,9 @@ from backend.api.views import CustomAuthToken
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/token/', CustomAuthToken.as_view(), name='api_token_auth'),
-    path('api/', include('backend.api.urls')),
-    path('api-auth/', include('rest_framework.urls')),
+    # path('api/token/', CustomAuthToken.as_view(), name='api_token_auth'),
+    # path('api/', include('backend.api.urls')),
+    # path('api-auth/', include('rest_framework.urls')),
     # Temporarily comment out the docs URL to fix the error
     # path('docs/', include_docs_urls(title='Barber Shop API')),
 ]
@@ -35,3 +36,4 @@ urlpatterns = [
 # Serve media files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Test comment
