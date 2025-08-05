@@ -53,8 +53,8 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('price_adjustment', models.DecimalField(decimal_places=2, default=0.0, max_digits=6)),
                 ('is_offered', models.BooleanField(default=True)),
-                ('barber', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='services', to='backend.api.barber')),
-                ('service', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend.api.service')),
+                ('barber', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='services', to='api.barber')),
+                ('service', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api.service')),
             ],
         ),
         migrations.CreateModel(
@@ -68,7 +68,7 @@ class Migration(migrations.Migration):
                 ('contact_number', models.CharField(blank=True, max_length=15, null=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('barber', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='appointments', to='backend.api.barber')),
+                ('barber', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='appointments', to='api.barber')),
             ],
         ),
     ]
