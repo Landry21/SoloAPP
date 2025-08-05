@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0008_rename_price_barberservice_price_adjustment'),
+        ('backend.api', '0008_rename_price_barberservice_price_adjustment'),
     ]
 
     operations = [

@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0006_rename_price_service_base_price_and_more'),
+        ('backend.api', '0006_rename_price_service_base_price_and_more'),
     ]
 
     operations = [

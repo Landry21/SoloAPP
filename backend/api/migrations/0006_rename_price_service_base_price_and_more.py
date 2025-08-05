@@ -8,7 +8,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0005_alter_service_options_service_barber_and_more'),
+        ('backend.api', '0005_alter_service_options_service_barber_and_more'),
     ]
 
     operations = [

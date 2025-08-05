@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0002_barber_location'),
+        ('backend.api', '0002_barber_location'),
     ]
 
     operations = [

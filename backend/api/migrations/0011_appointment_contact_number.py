@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0010_remove_appointment_status_appointment_service_and_more'),
+        ('backend.api', '0010_remove_appointment_status_appointment_service_and_more'),
     ]
 
     operations = [

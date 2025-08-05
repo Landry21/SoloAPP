@@ -6,7 +6,7 @@ import django.db.models.deletion
 
 def create_default_categories(apps, schema_editor):
     """Create default professional categories"""
-    ProfessionalCategory = apps.get_model('api', 'ProfessionalCategory')
+    ProfessionalCategory = apps.get_model('backend.api', 'ProfessionalCategory')
     
     # Create default categories
     barber_category = ProfessionalCategory.objects.create(
@@ -45,7 +45,7 @@ def create_default_categories(apps, schema_editor):
     )
     
     # Assign all existing barbers to 'Barber' category
-    Barber = apps.get_model('api', 'Barber')
+    Barber = apps.get_model('backend.api', 'Barber')
     for barber in Barber.objects.all():
         barber.category = barber_category
         barber.save()
@@ -53,14 +53,14 @@ def create_default_categories(apps, schema_editor):
 
 def reverse_migration(apps, schema_editor):
     """Reverse the migration"""
-    ProfessionalCategory = apps.get_model('api', 'ProfessionalCategory')
+    ProfessionalCategory = apps.get_model('backend.api', 'ProfessionalCategory')
     ProfessionalCategory.objects.all().delete()
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0011_appointment_contact_number'),
+        ('backend.api', '0011_appointment_contact_number'),
     ]
 
     operations = [
