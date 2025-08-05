@@ -68,7 +68,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "backend.urls"
+ROOT_URLCONF = "backend.backend.urls"
 
 CORS_ALLOW_ALL_ORIGINS = not IS_PRODUCTION  # For development only
 CORS_ALLOW_CREDENTIALS = True
