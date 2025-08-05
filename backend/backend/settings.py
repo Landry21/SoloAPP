@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "api",
+    "backend.api",
     "rest_framework.authtoken",
 ]
 print("DEBUG: INSTALLED_APPS set successfully")
