@@ -14,7 +14,7 @@ print(f"DEBUG: test_var = {test_var}")
 
 # Build paths inside the project like this: BASE_DIR / subdir.
 print("DEBUG: About to set BASE_DIR")
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 print(f"DEBUG: BASE_DIR = {BASE_DIR}")
 
 # Environment detection
