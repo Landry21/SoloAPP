@@ -540,7 +540,7 @@
     "model": "api.appointment",
     "pk": 8,
     "fields": {
-      "customer": "jamie fox",
+      "customer": 1,
       "barber": 2,
       "date": "2025-06-25",
       "start_time": "15:40:00",
@@ -555,7 +555,7 @@
     "model": "api.appointment",
     "pk": 9,
     "fields": {
-      "customer": "Biggie",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-01",
       "start_time": "13:10:00",
@@ -570,7 +570,7 @@
     "model": "api.appointment",
     "pk": 10,
     "fields": {
-      "customer": "Emmie eli",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-02",
       "start_time": "13:10:00",
@@ -585,7 +585,7 @@
     "model": "api.appointment",
     "pk": 11,
     "fields": {
-      "customer": "bird",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-04",
       "start_time": "13:10:00",
@@ -600,7 +600,7 @@
     "model": "api.appointment",
     "pk": 12,
     "fields": {
-      "customer": "Test1",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-01",
       "start_time": "09:00:00",
@@ -615,7 +615,7 @@
     "model": "api.appointment",
     "pk": 13,
     "fields": {
-      "customer": "Rita",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-01",
       "start_time": "10:40:00",
@@ -630,7 +630,7 @@
     "model": "api.appointment",
     "pk": 14,
     "fields": {
-      "customer": "Birdie Bird",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-01",
       "start_time": "14:00:00",
@@ -645,7 +645,7 @@
     "model": "api.appointment",
     "pk": 15,
     "fields": {
-      "customer": "Bruce james",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-01",
       "start_time": "12:20:00",
@@ -660,7 +660,7 @@
     "model": "api.appointment",
     "pk": 16,
     "fields": {
-      "customer": "tintin",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-05",
       "start_time": "11:30:00",
@@ -675,7 +675,7 @@
     "model": "api.appointment",
     "pk": 17,
     "fields": {
-      "customer": "jack jack",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-07",
       "start_time": "14:50:00",
@@ -690,7 +690,7 @@
     "model": "api.appointment",
     "pk": 18,
     "fields": {
-      "customer": "Dada",
+      "customer": 1,
       "barber": 6,
       "date": "2025-07-31",
       "start_time": "11:30:00",
@@ -705,7 +705,7 @@
     "model": "api.appointment",
     "pk": 19,
     "fields": {
-      "customer": "jayjay",
+      "customer": 1,
       "barber": 9,
       "date": "2025-07-23",
       "start_time": "11:30:00",
@@ -720,7 +720,7 @@
     "model": "api.appointment",
     "pk": 20,
     "fields": {
-      "customer": "lala",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-25",
       "start_time": "09:00:00",
@@ -735,7 +735,7 @@
     "model": "api.appointment",
     "pk": 21,
     "fields": {
-      "customer": "test user",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-25",
       "start_time": "12:20:00",
@@ -750,7 +750,7 @@
     "model": "api.appointment",
     "pk": 23,
     "fields": {
-      "customer": "pookie",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-25",
       "start_time": "15:40:00",
@@ -765,7 +765,7 @@
     "model": "api.appointment",
     "pk": 22,
     "fields": {
-      "customer": "alli",
+      "customer": 1,
       "barber": 2,
       "date": "2025-07-25",
       "start_time": "14:00:00",
