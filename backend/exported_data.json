@@ -116,7 +116,7 @@
     "fields": {
       "name": "Anana",
       "description": "",
-      "base_price": "15.00",
+      "price": "15.00",
       "duration_minutes": 45
     }
   },
@@ -126,7 +126,7 @@
     "fields": {
       "name": "Apple",
       "description": "",
-      "base_price": "5.00",
+      "price": "5.00",
       "duration_minutes": 45
     }
   },
@@ -136,7 +136,7 @@
     "fields": {
       "name": "Avocado",
       "description": "",
-      "base_price": "10.00",
+      "price": "10.00",
       "duration_minutes": 45
     }
   },
@@ -146,7 +146,7 @@
     "fields": {
       "name": "Beard Trim",
       "description": "Beard Trim service",
-      "base_price": "15.00",
+      "price": "15.00",
       "duration_minutes": 45
     }
   },
@@ -156,7 +156,7 @@
     "fields": {
       "name": "Fruits",
       "description": "",
-      "base_price": "20.00",
+      "price": "20.00",
       "duration_minutes": 45
     }
   },
@@ -166,7 +166,7 @@
     "fields": {
       "name": "Haircut",
       "description": "Haircut service",
-      "base_price": "25.00",
+      "price": "25.00",
       "duration_minutes": 45
     }
   },
@@ -176,7 +176,7 @@
     "fields": {
       "name": "Tomato",
       "description": "",
-      "base_price": "25.00",
+      "price": "25.00",
       "duration_minutes": 45
     }
   },
@@ -186,7 +186,7 @@
     "fields": {
       "name": "Ups",
       "description": "",
-      "base_price": "5.00",
+      "price": "5.00",
       "duration_minutes": 45
     }
   },
@@ -196,7 +196,7 @@
     "fields": {
       "name": "catch",
       "description": "",
-      "base_price": "15.00",
+      "price": "15.00",
       "duration_minutes": 45
     }
   },
@@ -206,7 +206,7 @@
     "fields": {
       "name": "curls",
       "description": "",
-      "base_price": "30.00",
+      "price": "30.00",
       "duration_minutes": 45
     }
   },
@@ -216,7 +216,7 @@
     "fields": {
       "name": "dance",
       "description": "",
-      "base_price": "10.00",
+      "price": "10.00",
       "duration_minutes": 45
     }
   },
@@ -226,7 +226,7 @@
     "fields": {
       "name": "down",
       "description": "",
-      "base_price": "10.00",
+      "price": "10.00",
       "duration_minutes": 45
     }
   },
@@ -236,7 +236,7 @@
     "fields": {
       "name": "dyeing",
       "description": "",
-      "base_price": "75.00",
+      "price": "75.00",
       "duration_minutes": 45
     }
   },
@@ -246,7 +246,7 @@
     "fields": {
       "name": "dyeing ",
       "description": "",
-      "base_price": "50.00",
+      "price": "50.00",
       "duration_minutes": 45
     }
   },
@@ -256,7 +256,7 @@
     "fields": {
       "name": "fades",
       "description": "",
-      "base_price": "15.00",
+      "price": "15.00",
       "duration_minutes": 45
     }
   },
@@ -266,7 +266,7 @@
     "fields": {
       "name": "implants",
       "description": "",
-      "base_price": "75.00",
+      "price": "75.00",
       "duration_minutes": 45
     }
   },
@@ -276,7 +276,7 @@
     "fields": {
       "name": "left",
       "description": "",
-      "base_price": "5.00",
+      "price": "5.00",
       "duration_minutes": 45
     }
   },
@@ -286,7 +286,7 @@
     "fields": {
       "name": "left ",
       "description": "",
-      "base_price": "15.00",
+      "price": "15.00",
       "duration_minutes": 45
     }
   },
@@ -296,7 +296,7 @@
     "fields": {
       "name": "locks",
       "description": "",
-      "base_price": "20.00",
+      "price": "20.00",
       "duration_minutes": 45
     }
   },
@@ -306,7 +306,7 @@
     "fields": {
       "name": "right",
       "description": "",
-      "base_price": "20.00",
+      "price": "20.00",
       "duration_minutes": 45
     }
   },
@@ -316,7 +316,7 @@
     "fields": {
       "name": "right ",
       "description": "",
-      "base_price": "20.00",
+      "price": "20.00",
       "duration_minutes": 45
     }
   },
@@ -326,7 +326,7 @@
     "fields": {
       "name": "up",
       "description": "",
-      "base_price": "1.00",
+      "price": "1.00",
       "duration_minutes": 45
     }
   },
@@ -336,7 +336,7 @@
     "fields": {
       "name": "up ",
       "description": "",
-      "base_price": "5.00",
+      "price": "5.00",
       "duration_minutes": 45
     }
   },
