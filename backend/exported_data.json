@@ -537,7 +537,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 8,
     "fields": {
       "customer": 1,
@@ -552,7 +551,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 9,
     "fields": {
       "customer": 1,
@@ -567,7 +565,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 10,
     "fields": {
       "customer": 1,
@@ -582,7 +579,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 11,
     "fields": {
       "customer": 1,
@@ -597,7 +593,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 12,
     "fields": {
       "customer": 1,
@@ -612,7 +607,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 13,
     "fields": {
       "customer": 1,
@@ -627,7 +621,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 14,
     "fields": {
       "customer": 1,
@@ -642,7 +635,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 15,
     "fields": {
       "customer": 1,
@@ -657,7 +649,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 16,
     "fields": {
       "customer": 1,
@@ -672,7 +663,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 17,
     "fields": {
       "customer": 1,
@@ -687,7 +677,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 18,
     "fields": {
       "customer": 1,
@@ -702,7 +691,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 19,
     "fields": {
       "customer": 1,
@@ -717,7 +705,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 20,
     "fields": {
       "customer": 1,
@@ -732,7 +719,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 21,
     "fields": {
       "customer": 1,
@@ -747,7 +733,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 23,
     "fields": {
       "customer": 1,
@@ -762,7 +747,6 @@
     }
   },
   {
-    "model": "api.appointment",
     "pk": 22,
     "fields": {
       "customer": 1,
