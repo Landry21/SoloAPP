@@ -1,0 +1,779 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "username": "johndoe",
+      "email": "johndoe@barber.com",
+      "first_name": "John",
+      "last_name": "Doe",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-05-09T00:19:46.486520+00:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "username": "jackdoe",
+      "email": "jackdoe@barber.com",
+      "first_name": "jack",
+      "last_name": "doe",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-05-09T17:53:09.732768+00:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+      "username": "jackiedoe",
+      "email": "jackiedoe@hair.com",
+      "first_name": "jackie",
+      "last_name": "Doe",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "date_joined": "2025-07-18T21:35:42.840739+00:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "alfa",
+      "email": "ben@admin.com",
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "is_superuser": true,
+      "date_joined": "2025-04-06T03:48:15.652251+00:00"
+    }
+  },
+  {
+    "model": "api.professionalcategory",
+    "pk": 1,
+    "fields": {
+      "name": "Barber",
+      "slug": "barber",
+      "description": "Haircuts, beard trims, and styling",
+      "icon": "scissors",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.professionalcategory",
+    "pk": 2,
+    "fields": {
+      "name": "Hair Stylist",
+      "slug": "hair-stylist",
+      "description": "Haircuts, coloring, and treatments",
+      "icon": "cut",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.professionalcategory",
+    "pk": 4,
+    "fields": {
+      "name": "Makeup Artist",
+      "slug": "makeup-artist",
+      "description": "Makeup application and lessons",
+      "icon": "makeup",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.professionalcategory",
+    "pk": 3,
+    "fields": {
+      "name": "Nail Technician",
+      "slug": "nail-tech",
+      "description": "Manicures, pedicures, and nail art",
+      "icon": "nail-polish",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.professionalcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Tattoo Artist",
+      "slug": "tattoo-artist",
+      "description": "Tattoos, piercings, and body art",
+      "icon": "tattoo",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 15,
+    "fields": {
+      "name": "Anana",
+      "description": "",
+      "price": "15.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 13,
+    "fields": {
+      "name": "Apple",
+      "description": "",
+      "price": "5.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 14,
+    "fields": {
+      "name": "Avocado",
+      "description": "",
+      "price": "10.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 23,
+    "fields": {
+      "name": "Beard Trim",
+      "description": "Beard Trim service",
+      "price": "15.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 16,
+    "fields": {
+      "name": "Fruits",
+      "description": "",
+      "price": "20.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 22,
+    "fields": {
+      "name": "Haircut",
+      "description": "Haircut service",
+      "price": "25.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 17,
+    "fields": {
+      "name": "Tomato",
+      "description": "",
+      "price": "25.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 5,
+    "fields": {
+      "name": "Ups",
+      "description": "",
+      "price": "5.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 4,
+    "fields": {
+      "name": "catch",
+      "description": "",
+      "price": "15.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 18,
+    "fields": {
+      "name": "curls",
+      "description": "",
+      "price": "30.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 3,
+    "fields": {
+      "name": "dance",
+      "description": "",
+      "price": "10.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 6,
+    "fields": {
+      "name": "down",
+      "description": "",
+      "price": "10.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 21,
+    "fields": {
+      "name": "dyeing",
+      "description": "",
+      "price": "75.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 19,
+    "fields": {
+      "name": "dyeing ",
+      "description": "",
+      "price": "50.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 7,
+    "fields": {
+      "name": "fades",
+      "description": "",
+      "price": "15.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 20,
+    "fields": {
+      "name": "implants",
+      "description": "",
+      "price": "75.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 2,
+    "fields": {
+      "name": "left",
+      "description": "",
+      "price": "5.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 11,
+    "fields": {
+      "name": "left ",
+      "description": "",
+      "price": "15.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 8,
+    "fields": {
+      "name": "locks",
+      "description": "",
+      "price": "20.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 12,
+    "fields": {
+      "name": "right",
+      "description": "",
+      "price": "20.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 9,
+    "fields": {
+      "name": "right ",
+      "description": "",
+      "price": "20.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 1,
+    "fields": {
+      "name": "up",
+      "description": "",
+      "price": "1.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.service",
+    "pk": 10,
+    "fields": {
+      "name": "up ",
+      "description": "",
+      "price": "5.00",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "model": "api.barber",
+    "pk": 2,
+    "fields": {
+      "user": 4,
+      "profile_image": "barber_profiles/barber1_OPctNLX.png",
+      "bio": "",
+      "years_of_experience": 5,
+      "location": "0101000020E6100000820F6FE78CC651C04C7ACECC822E4540",
+      "address": "21 Brookline Street, Cambridge, Massachusetts, 02139",
+      "price_range_min": "5.00",
+      "price_range_max": "25.00",
+      "is_available": true,
+      "average_rating": "0.00",
+      "total_reviews": 0,
+      "category": 1,
+      "is_paused": false,
+      "pause_start_date": null,
+      "pause_end_date": null,
+      "pause_reason": ""
+    }
+  },
+  {
+    "model": "api.barber",
+    "pk": 6,
+    "fields": {
+      "user": 5,
+      "profile_image": "barber_profiles/barber3.png",
+      "bio": "",
+      "years_of_experience": 4,
+      "location": "0101000020E610000092A86109B5C651C09E83C2FB052E4540",
+      "address": "12 Emily Street, Cambridge, Massachusetts, 02139",
+      "price_range_min": "5.00",
+      "price_range_max": "25.00",
+      "is_available": true,
+      "average_rating": "0.00",
+      "total_reviews": 0,
+      "category": 1,
+      "is_paused": false,
+      "pause_start_date": null,
+      "pause_end_date": null,
+      "pause_reason": ""
+    }
+  },
+  {
+    "model": "api.barber",
+    "pk": 9,
+    "fields": {
+      "user": 6,
+      "profile_image": "barber_profiles/barber2_7iUo9fS.png",
+      "bio": "",
+      "years_of_experience": 2,
+      "location": "0101000020E61000008969954FC5C651C0662321DB432E4540",
+      "address": "27 Decatur Street, Cambridge, Massachusetts, 02139",
+      "price_range_min": "30.00",
+      "price_range_max": "75.00",
+      "is_available": true,
+      "average_rating": "0.00",
+      "total_reviews": 0,
+      "category": 2,
+      "is_paused": false,
+      "pause_start_date": null,
+      "pause_end_date": null,
+      "pause_reason": ""
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 51,
+    "fields": {
+      "barber": 2,
+      "service": 1,
+      "price_adjustment": "5.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 52,
+    "fields": {
+      "barber": 2,
+      "service": 6,
+      "price_adjustment": "10.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 53,
+    "fields": {
+      "barber": 2,
+      "service": 11,
+      "price_adjustment": "15.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 54,
+    "fields": {
+      "barber": 2,
+      "service": 12,
+      "price_adjustment": "20.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 55,
+    "fields": {
+      "barber": 2,
+      "service": 3,
+      "price_adjustment": "25.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 56,
+    "fields": {
+      "barber": 6,
+      "service": 13,
+      "price_adjustment": "5.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 57,
+    "fields": {
+      "barber": 6,
+      "service": 14,
+      "price_adjustment": "10.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 58,
+    "fields": {
+      "barber": 6,
+      "service": 15,
+      "price_adjustment": "15.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 59,
+    "fields": {
+      "barber": 6,
+      "service": 16,
+      "price_adjustment": "20.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 60,
+    "fields": {
+      "barber": 6,
+      "service": 17,
+      "price_adjustment": "25.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 61,
+    "fields": {
+      "barber": 9,
+      "service": 18,
+      "price_adjustment": "30.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 62,
+    "fields": {
+      "barber": 9,
+      "service": 19,
+      "price_adjustment": "50.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.barberservice",
+    "pk": 63,
+    "fields": {
+      "barber": 9,
+      "service": 20,
+      "price_adjustment": "75.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 8,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-06-25",
+      "start_time": "15:40:00",
+      "end_time": "16:25:00",
+      "service": "left",
+      "status": "scheduled",
+      "notes": "cut test",
+      "contact_number": "8974298373"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 9,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-01",
+      "start_time": "13:10:00",
+      "end_time": "13:55:00",
+      "service": "right",
+      "status": "scheduled",
+      "notes": "Make it quick",
+      "contact_number": "7472836284"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 10,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-02",
+      "start_time": "13:10:00",
+      "end_time": "13:55:00",
+      "service": "up",
+      "status": "scheduled",
+      "notes": "HIHi",
+      "contact_number": "9832343342"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 11,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-04",
+      "start_time": "13:10:00",
+      "end_time": "13:55:00",
+      "service": "left",
+      "status": "scheduled",
+      "notes": "for a date",
+      "contact_number": "8727938472"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 12,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-01",
+      "start_time": "09:00:00",
+      "end_time": "09:45:00",
+      "service": "right",
+      "status": "scheduled",
+      "notes": "dance",
+      "contact_number": "7736273247"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 13,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-01",
+      "start_time": "10:40:00",
+      "end_time": "11:25:00",
+      "service": "down",
+      "status": "scheduled",
+      "notes": "Look Here",
+      "contact_number": "4623728371"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 14,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-01",
+      "start_time": "14:00:00",
+      "end_time": "14:45:00",
+      "service": "down",
+      "status": "scheduled",
+      "notes": "Dating",
+      "contact_number": "2381286237"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 15,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-01",
+      "start_time": "12:20:00",
+      "end_time": "13:05:00",
+      "service": "dance",
+      "status": "scheduled",
+      "notes": "wow",
+      "contact_number": "4232849231"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 16,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-05",
+      "start_time": "11:30:00",
+      "end_time": "12:15:00",
+      "service": "dance",
+      "status": "scheduled",
+      "notes": "jjffhjgj",
+      "contact_number": "6865745475"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 17,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-07",
+      "start_time": "14:50:00",
+      "end_time": "15:35:00",
+      "service": "down",
+      "status": "scheduled",
+      "notes": "Special",
+      "contact_number": "5687429732"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 18,
+    "fields": {
+      "customer": 1,
+      "barber": 6,
+      "date": "2025-07-31",
+      "start_time": "11:30:00",
+      "end_time": "12:15:00",
+      "service": "Apple",
+      "status": "scheduled",
+      "notes": "quick",
+      "contact_number": "8377283027"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 19,
+    "fields": {
+      "customer": 1,
+      "barber": 9,
+      "date": "2025-07-23",
+      "start_time": "11:30:00",
+      "end_time": "12:15:00",
+      "service": "implants",
+      "status": "scheduled",
+      "notes": "I'll bring my own.",
+      "contact_number": "3268643648"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 20,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-25",
+      "start_time": "09:00:00",
+      "end_time": "09:45:00",
+      "service": "right",
+      "status": "scheduled",
+      "notes": "chap",
+      "contact_number": "7394893842"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 21,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-25",
+      "start_time": "12:20:00",
+      "end_time": "13:05:00",
+      "service": "right",
+      "status": "cancelled",
+      "notes": "shake it",
+      "contact_number": "8029498420"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 23,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-25",
+      "start_time": "15:40:00",
+      "end_time": "16:25:00",
+      "service": "up",
+      "status": "cancelled",
+      "notes": "check",
+      "contact_number": "4230038208"
+    }
+  },
+  {
+    "model": "api.appointment",
+    "pk": 22,
+    "fields": {
+      "customer": 1,
+      "barber": 2,
+      "date": "2025-07-25",
+      "start_time": "14:00:00",
+      "end_time": "14:45:00",
+      "service": "down",
+      "status": "cancelled",
+      "notes": "hrer",
+      "contact_number": "4923273820"
+    }
+  }
+]
